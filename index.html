@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head>
+	<title>getout</title>
+	<style>
+		
+		#tenor{margin: auto; position: absolute; top: 10px; left: 600px;}
+		
+		#ns{margin: auto; position: absolute; top: 300px; left: 700px;}
+		
+		#closeD{margin: auto; width:90px; position:absolute; left: 200px;}
+		
+		#light{margin: auto; width: 120px; height: auto; position: absolute; top: 20px; left: 340px; opacity: 0; transition: all 2s;}
+		
+		#gifbox{margin: auto; position: absolute; top: 180px; left: 430px; }
+		
+	</style>
+
+	
+</head>
+
+<body style = "background-color : black;">
+	
+	<div id="tenor" style="width: 400px;">
+	<img id="tenor1" src="./img/tenor.gif" style="width: 400px; height: auto;">
+	</div>
+	
+	<div id="ns" style="width: 400px;">
+	<img id="ns1" src="./img/ns.png" style="width: 200px; height: auto;">
+	</div>
+	
+	<div id="door">
+	<img src="./img/close.png" id="closeD" style="width:400px; height:auto;">
+	</div>
+	
+	<div id="oh">
+	<img src="./img/light.png" id="light" style="width:500px; height:auto;">
+	</div>
+	
+	<div id="gifbox" style="width: 0px;">
+		<img id="gsource" src="./img/sera.gif" style="width: 0px; height: 0px; transition: all 1s">
+	</div>
+	
+	<audio id="backMusic">
+ 		<source src="img/go.mp3" type="audio/mpeg">
+	</audio>
+	<script>
+		var toggle = "off";
+		closeD.onclick = function(){
+			if(toggle == "off"){
+					closeD.setAttribute("src","img/open.png");
+					light.style.opacity = "1";
+				
+					gsource.style.width = "400px";
+					gsource.style.height = "300px";
+
+					backMusic.play();
+				
+					toggle = "on";
+				}
+			else {
+					closeD.setAttribute("src","img/close.png")
+					light.style.opacity = "0";
+				
+					gsource.style.width = "0px";
+					gsource.style.height = "0px";
+
+					backMusic.pause();
+				
+					toggle = "off";
+				}
+}
+
+</script>
+</body></html>
